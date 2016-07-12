@@ -31,7 +31,8 @@ class Auth_controller extends Controller
                     $user = User::create([
                         'username' => $info->getNick(),
                         'avatar'   => $info->getProfilePictureFull(),
-                        'steamid'  => $info->getSteamID64()
+                        'steamid'  => $info->getSteamID64(),
+                        'name'  => $info->getName()
                     ]);
                 }
                 Auth::login($user, true);
